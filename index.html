@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>O R B I T</title>
+    <meta name="description" content="Orbit by LJHAN">
+    <script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      
+    <!-- #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  -->
+      
+      <!-- ASSET -->
+      <a-assets>
+        <img id="gradient" src="img/gradient.png">
+        <img id="galaxy" src="img/galaxy-mirrored-half.png">
+        <img id="orbit-1" src="img/orbit-1.jpg">
+        <img id="orbit-2" src="img/orbit-2.jpg">
+        <img id="orbit-3" src="img/orbit-3.jpg">
+        <img id="orbit-4" src="img/orbit-4.jpg">
+        
+
+        <audio id="chords" src="sounds/Bpm145_A_Phantom_ChordsBuild.wav"></audio>
+      </a-assets>
+      
+      <!-- BG -->
+      <a-sky src="#galaxy"></a-sky>
+      
+      <!-- ENTITIES -->
+      <!-- position="+R +UP +TWD-->
+      
+      <!-- sphere1 -->
+      <a-entity sound="src: #chords; autoplay: true; loop: true"> <!-- color="#99d6ff" -->
+        <a-sphere id="sphere1"
+                  radius="1.7"
+                  position="2.0 0 0" 
+                  rotation="0 0 0"
+                  src="#orbit-1"
+                  opacity=1.0> <!-- opacity: -->
+          <a-animation attribute="rotation" repeat="indefinite" to="45 360 45" direction="alternate"></a-animation> <!-- begin="onClick" end="offClick"  -->
+        </a-sphere>
+      </a-entity>
+      
+      <!-- sphere2 -->
+      <a-entity> <!-- color="#99d6ff" -->
+        <a-sphere id="sphere2"
+                  radius="1.5"
+                  position="7 0 1.5" 
+                  rotation="0 0 0"
+                  src="#orbit-2"
+                  opacity=0.8> <!-- opacity: -->
+<!--          <a-animation attribute="rotation" repeat="indefinite" to="45 360 45" direction="alternate"></a-animation>  begin="onClick" end="offClick"  -->
+        </a-sphere>
+<!--      </a-entity>-->
+      
+      <!-- sphere3 -->
+<!--      <a-entity sound="src: #starbeam; on: click">  color="#99d6ff" -->
+        <a-sphere id="sphere3"
+                  radius="1.2"
+                  position="0.5 0 -5.0" 
+                  rotation="0 0 0"
+                  src="#orbit-3"
+                  opacity=0.6> <!-- opacity: -->
+<!--          <a-animation attribute="rotation" repeat="indefinite" to="45 360 45" direction="alternate"></a-animation>  begin="onClick" end="offClick"  -->
+        </a-sphere>
+<!--      </a-entity>-->
+      
+      <!-- sphere4 -->
+<!--      <a-entity sound="src: #starbeam; on: click">  color="#99d6ff" -->
+        <a-sphere id="sphere4"
+                  radius="0.8"
+                  position="-2.0 0 3.5" 
+                  rotation="0 0 0"
+                  src="#orbit-4"
+                  opacity=0.4> <!-- opacity: -->
+<!--          <a-animation attribute="rotation" repeat="indefinite" to="45 360 45" direction="alternate"></a-animation>  begin="onClick" end="offClick"  -->
+        </a-sphere>
+        
+        <a-animation attribute="rotation"
+               dur="7000"
+               fill="alternate"
+               from="0 0 0"
+               to="360 360 360"
+               repeat="indefinite"></a-animation>
+      </a-entity>
+      
+      <!-- egg -->
+      <a-torus position="15 5 -30" color="#fff" arc="360" rotation="-30 -30 0" radius="0.5" radius-tubular="0.1"></a-torus>
+      <a-sphere position="15 5 -30" radius="0.3" rotation="-90 0 0" color="#ffcc99"></a-sphere>
+      
+      
+      <!-- LIGHT -->
+      <!--<a-light type="spot" color="#fefefe" position="-20 0 0" look-at="a-box"></a-light>
+      <a-light type="point" color="#AAA" position="0 5 0"></a-light>-->
+
+      <!-- CAMERA -->
+      <a-camera position="2.5 1.5 20.5"
+                rotation="-6.5 2.5 0">
+        <a-cursor color="#6cadff"></a-cursor>
+      </a-camera>
+
+      
+
+	  <!-- tiny star orbits -->
+      <!-- CLUSTER 1 -->
+      <!-- <a-entity> color="#99d6ff"
+        <a-sphere id="orbit" 
+                      radius="0.25"
+                      position="3 3 3" rotation="0 0 0"
+                      color="#fff" opacity="1">
+        <a-animation ></a-animation>  begin="onClick" end="offClick"
+        </a-sphere>  
+      </a-entity> -->
+      
+      <!-- tiny star cluster orbits -->
+      <a-entity position="0 10 -10">
+        <a-sphere id="orbit-cluster" 
+                      radius="0.15"
+                      position="3 4 3" rotation="0 0 0"
+                      color="#fff" opacity="1">
+        <!-- <a-animation ></a-animation>  begin="onClick" end="offClick"  -->
+        </a-sphere>  
+        <a-sphere id="orbit-cluster" 
+                      radius="0.15"
+                      position="2.8 4.125 3" rotation="0 0 0"
+                      color="#fff" opacity="1">
+        <!-- <a-animation ></a-animation>  begin="onClick" end="offClick"  -->
+        </a-sphere>  
+        <a-sphere id="orbit-cluster" 
+                      radius="0.15"
+                      position="3 4.25 3" rotation="0 0 0"
+                      color="#fff" opacity="1">
+        <!-- <a-animation ></a-animation>  begin="onClick" end="offClick"  -->
+        </a-sphere>
+        <a-animation attribute="rotation"
+               dur="7000"
+               fill="forwards"
+               to="360 360 0"
+               repeat="indefinite"></a-animation>
+      </a-entity>
+      
+      <!-- CLUSTER 2 -->
+      <a-entity position="0 3 0">
+        <a-sphere id="orbit-cluster" 
+                      radius="0.15"
+                      position="3 4 3" rotation="0 0 0"
+                      color="#fff" opacity="1">
+        <!-- <a-animation ></a-animation>  begin="onClick" end="offClick"  -->
+        </a-sphere>  
+        <a-sphere id="orbit-cluster" 
+                      radius="0.15"
+                      position="2.8 4.125 3" rotation="0 0 0"
+                      color="#fff" opacity="1">
+        <!-- <a-animation ></a-animation>  begin="onClick" end="offClick"  -->
+        </a-sphere>  
+        <a-sphere id="orbit-cluster" 
+                      radius="0.15"
+                      position="3 4.25 3" rotation="0 0 0"
+                      color="#fff" opacity="1">
+        <!-- <a-animation ></a-animation>  begin="onClick" end="offClick"  -->
+        </a-sphere>
+        <a-animation attribute="rotation"
+               dur="7000"
+               fill="backwards"
+               to="0 360 360"
+               repeat="indefinite"></a-animation>
+      </a-entity>
+
+      
+      
+      
+
+    </a-scene>
+    
+    <!-- SCRIPT -->
+    <script>
+
+      var setSpinning = function (entity) {
+        if(entity.isSpinning != true) {
+          entity.isSpinning = true;
+          if(entity.components && entity.components.sound) {entity.components.sound.play();}
+          entity.emit('spinHigherCluster');
+        }
+        else {
+          entity.isSpinning = false;
+          if(entity.components && entity.components.sound) {entity.components.sound.pause();}
+          entity.emit('stopSpinHigherCluster');
+        }
+        return entity;
+      };
+
+      document.querySelector('#gradientDodeca')
+        .addEventListener('click', function() {
+          setSpinning(this);
+        });
+
+      document.querySelector('#gradientOcta')
+        .addEventListener('click', function() {
+          setSpinning(this);
+        });
+
+      document.querySelector('#gradientBox')
+        .addEventListener('click', function() {
+          setSpinning(this);
+        });
+
+      document.querySelector('#startSphere')
+        .addEventListener('click', function() {
+          setSpinning(this);
+          setSpinning(document.querySelector('#gradientBox'));
+          setSpinning(document.querySelector('#gradientOcta'));
+          setSpinning(document.querySelector('#gradientDodeca'));
+        });
+
+      // gradientBox
+      document.querySelector('#gradientBox2')
+              .addEventListener('click', function() {
+                if(this.isOn != true) {
+                  this.isOn = true;
+                  this.emit('onClick');
+                }
+                else {
+                  this.isOn = false;
+                  this.emit('offClick');
+                }
+              });
+
+      // tetra
+      document.querySelector('#tetra')
+              .addEventListener('click', function() {
+                if(this.isOn != true) {
+                  this.isOn = true;
+                  this.emit('onClick');
+                }
+                else {
+                  this.isOn = false;
+                  this.emit('offClick');
+                }
+              });
+
+      // sphere
+      document.querySelector('#sphr')
+              .addEventListener('click', function() {
+                if(this.isOn != true) {
+                  this.isOn = true;
+                  this.emit('onClick');
+                }
+                else {
+                  this.isOn = false;
+                  this.emit('offClick');
+                }
+              });
+
+      // tknot
+      document.querySelector('#tknot')
+              .addEventListener('click', function() {
+                if(this.isOn != true) {
+                  this.isOn = true;
+                  this.emit('onClick');
+                }
+                else {
+                  this.isOn = false;
+                  this.emit('offClick');
+                }
+              });
+    </script>
+    
+  </body>
+</html>
