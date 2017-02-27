@@ -31,52 +31,50 @@
       <!-- ENTITIES -->
       <!-- position="+R +UP +TWD-->
       
-      <!-- sphere1 -->
+      <!-- sphere1 radius="1.7"-->
       <a-entity sound="src: #chords; autoplay: true; loop: true"> <!-- color="#99d6ff" -->
-        <a-sphere id="sphere1"
-                  radius="1.7"
+        <a-box id="sphere1"
+                  depth="4" height="4" width="4"
                   position="2.0 0 0" 
                   rotation="0 0 0"
                   src="#orbit-1"
                   opacity=1.0> <!-- opacity: -->
-          <a-animation attribute="rotation" repeat="indefinite" to="45 360 45" direction="alternate"></a-animation> <!-- begin="onClick" end="offClick"  -->
-        </a-sphere>
+          <a-animation attribute="rotation" 
+                       repeat="indefinite" 
+                       to="45 360 45" 
+                       direction="alternate"></a-animation>
+        </a-box>
       </a-entity>
       
+      <!-- GROUP SHAPES -->
       <!-- sphere2 -->
-      <a-entity> <!-- color="#99d6ff" -->
-        <a-sphere id="sphere2"
-                  radius="1.5"
+      <a-entity> <!-- color="#99d6ff" radius="1.5" -->
+        <a-box id="sphere2"
+                  depth="2.75" height="2.75" width="2.75"
                   position="7 0 1.5" 
                   rotation="0 0 0"
                   src="#orbit-2"
-                  opacity=0.8> <!-- opacity: -->
-<!--          <a-animation attribute="rotation" repeat="indefinite" to="45 360 45" direction="alternate"></a-animation>  begin="onClick" end="offClick"  -->
-        </a-sphere>
-<!--      </a-entity>-->
+                  opacity=0.8> 
+        </a-box>
+
       
-      <!-- sphere3 -->
-<!--      <a-entity sound="src: #starbeam; on: click">  color="#99d6ff" -->
-        <a-sphere id="sphere3"
-                  radius="1.2"
+      <!-- sphere3 radius="1.2"-->
+        <a-box id="sphere3"
+                  depth="2.3" height="2.3" width="2.3"
                   position="0.5 0 -5.0" 
                   rotation="0 0 0"
                   src="#orbit-3"
-                  opacity=0.6> <!-- opacity: -->
-<!--          <a-animation attribute="rotation" repeat="indefinite" to="45 360 45" direction="alternate"></a-animation>  begin="onClick" end="offClick"  -->
-        </a-sphere>
-<!--      </a-entity>-->
+                  opacity=0.6> 
+        </a-box>
       
-      <!-- sphere4 -->
-<!--      <a-entity sound="src: #starbeam; on: click">  color="#99d6ff" -->
-        <a-sphere id="sphere4"
-                  radius="0.8"
+      <!-- sphere4 radius="0.8"-->
+        <a-box id="sphere4"
+                  depth="1.5" height="1.5" width="1.5"
                   position="-2.0 0 3.5" 
                   rotation="0 0 0"
                   src="#orbit-4"
-                  opacity=0.4> <!-- opacity: -->
-<!--          <a-animation attribute="rotation" repeat="indefinite" to="45 360 45" direction="alternate"></a-animation>  begin="onClick" end="offClick"  -->
-        </a-sphere>
+                  opacity=0.4> 
+        </a-box>
         
         <a-animation attribute="rotation"
                dur="7000"
@@ -87,9 +85,10 @@
       </a-entity>
       
       <!-- egg -->
-      <a-torus position="15 5 -30" color="#fff" arc="360" rotation="-30 -30 0" radius="0.5" radius-tubular="0.1"></a-torus>
-      <a-sphere position="15 5 -30" radius="0.3" rotation="-90 0 0" color="#ffcc99"></a-sphere>
-      
+      <a-entity>
+        <a-torus position="15 5 -30" color="#fff" arc="360" rotation="-30 -30 0" radius="0.5" radius-tubular="0.1"></a-torus>
+        <a-sphere position="15 5 -30" radius="0.3" rotation="-90 0 0" color="#ffcc99"></a-sphere>
+      </a-entity>
       
       <!-- LIGHT -->
       <!--<a-light type="spot" color="#fefefe" position="-20 0 0" look-at="a-box"></a-light>
